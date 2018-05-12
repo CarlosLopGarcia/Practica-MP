@@ -3,22 +3,20 @@ package Servidor;
 import java.util.ArrayList;
 import java.util.Observable;
 
-public class ModeloServidor extends Observable{
+public class ModeloServidor extends Observable {
     
-    //ATRIBUTOS
     private ArrayList<Coordenada> serpiente;    //LA COLA ES EL ELEMENTO 0, Y LA CABEZA EL ÚLTIMO
     private ArrayList<Coordenada> tesoros;
     private int direccion;  //ARRIBA 1, ABAJO 2, IZQUIERDA 3, DERECHA 4
     private int puntos;
     
-    //CONSTRUCTOR
     public ModeloServidor(){
-        serpiente = new ArrayList<Coordenada>();
+        serpiente = new ArrayList<>();
         Coordenada coord = new Coordenada(11,10);
         serpiente.add(coord);
         Coordenada coord2 = new Coordenada(10,10);
         serpiente.add(coord2);
-        tesoros = new ArrayList<Coordenada>();
+        tesoros = new ArrayList<>();
         direccion = 0;
         puntos = 0;
     }
@@ -114,36 +112,6 @@ public class ModeloServidor extends Observable{
         tesoros.add(coord);
     }
     
-    
-    //SUBCLASES
-    public class Coordenada{
-        //ATRIBUTOS
-        int y,x;
-        
-        //CONSTRUCTOR
-        public Coordenada(int y, int x){
-            this.y = y;
-            this.x = x;
-        }
-        
-        //MÉTODOS
-        public int getY(){
-            return this.y;
-        }
-        
-        public int getX(){
-            return this.x;
-        }
-        
-        public void setY(int i){
-            this.y = i;
-        }
-        
-        public void setX(int i){
-            this.x = i;
-        }
-    }
-    
     public void notificaMov() {
         this.setChanged();
         this.notifyObservers(new Integer(1));
@@ -163,5 +131,4 @@ public class ModeloServidor extends Observable{
         this.setChanged();
         this.notifyObservers(new Integer(4));
     }
-    
 }

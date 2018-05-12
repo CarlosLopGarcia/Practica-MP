@@ -1,5 +1,5 @@
 package Cliente;
-import Cliente.ControladorCliente.Conector;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -54,7 +54,7 @@ public class PuntosCliente extends javax.swing.JFrame implements Observer{
     @Override
     public void update(Observable o, Object o1) {
         if(o1.equals(1)){
-            Conector con = (Conector) o;
+            ConectorCliente con = (ConectorCliente) o;
             puntuacion.setText(String.valueOf(con.getPuntos()));
         }
     }

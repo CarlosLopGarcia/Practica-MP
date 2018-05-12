@@ -1,20 +1,24 @@
 package Cliente;
 
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class VistaGeneral extends javax.swing.JFrame{
-
-    private String IA, comp, indiv, ip;
-    private int puerto;
+                    
+    private JButton botonLanzador;
+    private JButton cerrarapp;
+    private JLabel jLabel1;
+    private JLabel jLabel2;
+    private JPanel jPanel1;
+    private JPanel jPanel2;
+    
+    private String IA, comp, indiv;
+    
     public VistaGeneral() {
         initComponents();
 
         indiv = "0";
         IA = "1";
         comp = "2";
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
@@ -124,32 +128,24 @@ public class VistaGeneral extends javax.swing.JFrame{
         pack();
     }// </editor-fold>                        
 
-    private void botonLanzadorActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        
-        try{
+    private void botonLanzadorActionPerformed(java.awt.event.ActionEvent evt) {   
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        try {
             String IP = JOptionPane.showInputDialog("Ingrese IP: ");
-            if (IP.equals(null)) System.exit(0);
-            int puerto = Integer.parseInt(JOptionPane.showInputDialog("Ingrese Puerto: "));
-            ControladorCliente controlador = new ControladorCliente(IP,puerto);
-            new VistaCliente(controlador).setVisible(true);
+            if (!IP.equals(null)) {
+                String puerto = JOptionPane.showInputDialog("Ingrese Puerto: ");
+                if(!puerto.equals(null)) {
+                    ControladorCliente controlador = new ControladorCliente(IP,Integer.parseInt(puerto));
+                    new VistaCliente(controlador).setVisible(true);
+                    dispose();
+                }
+            }
+            
         }
         catch(Exception e){System.exit(0);}
-        dispose();
     }                                                                                             
 
     private void cerrarappActionPerformed(java.awt.event.ActionEvent evt) {                                          
         System.exit(0);
     }                                                                                   
-
-    // Variables declaration - do not modify                     
-    private javax.swing.JButton botonLanzador;
-    private javax.swing.JButton cerrarapp;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    // End of variables declaration     
-    
-  
-
 }    

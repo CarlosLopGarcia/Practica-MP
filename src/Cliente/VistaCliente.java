@@ -1,14 +1,19 @@
 package Cliente;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class VistaCliente extends javax.swing.JFrame implements Observer{
-    //CONSTRUCTOR
+public class VistaCliente extends javax.swing.JFrame implements Observer {
+                        
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jSalir;               
+    private JPanel[][] tablero;
+    
     public VistaCliente(ControladorCliente controlador) {
         initComponents();
         tablero = new JPanel[20][20];
@@ -35,26 +40,24 @@ public class VistaCliente extends javax.swing.JFrame implements Observer{
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jSalir = new javax.swing.JButton();
+        jSalir = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jSalir.setText("SALIR");
-        jMenuBar1.add(jSalir);
-        setJMenuBar(jMenuBar1);
-
-        jSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salirActionPerformed(evt);
-            }
-
-            private void salirActionPerformed(ActionEvent evt) {
-                VistaGeneral vg = new VistaGeneral();
-                vg.setVisible(true);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                VistaGeneral vgeneral = new VistaGeneral();
+                vgeneral.setVisible(true);
                 dispose();
             }
         });
-       
+
+        jSalir.setText("SALIR");
+        jMenuBar1.add(jSalir);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -68,22 +71,16 @@ public class VistaCliente extends javax.swing.JFrame implements Observer{
 
         pack();
     }// </editor-fold>                        
-    // Variables declaration - do not modify                     
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JButton jSalir;
-    // End of variables declaration                   
-    private JPanel[][] tablero;
-    
     
     @Override
     public void update(Observable o, Object o1) {
         if(o1.equals(2)){
-            ControladorCliente.Conector con = (ControladorCliente.Conector) o;
+            ConectorCliente con = (ConectorCliente) o;
             tablero[con.getCay()][con.getCax()].setBackground(Color.green);
             if(con.getCoy()!=20) tablero[con.getCoy()][con.getCox()].setBackground(Color.white);
         }
         if(o1.equals(3)){
-            ControladorCliente.Conector con = (ControladorCliente.Conector) o;
+            ConectorCliente con = (ConectorCliente) o;
             tablero[con.getTy()][con.getTx()].setBackground(Color.red);
         }
     }
