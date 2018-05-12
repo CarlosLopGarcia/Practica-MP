@@ -1,5 +1,7 @@
 package Cliente;
 
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class VistaGeneral extends javax.swing.JFrame{
@@ -12,6 +14,7 @@ public class VistaGeneral extends javax.swing.JFrame{
         indiv = "0";
         IA = "1";
         comp = "2";
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
@@ -24,11 +27,14 @@ public class VistaGeneral extends javax.swing.JFrame{
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-
+        JFrame frame =  new JFrame();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
         setResizable(false);
-
+       // cerrarapp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+       
+       
+        cerrarapp.setBounds(10, 10, 10, 10);
         cerrarapp.setBackground(new java.awt.Color(255, 0, 0));
         cerrarapp.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         cerrarapp.setForeground(new java.awt.Color(255, 255, 255));
@@ -45,8 +51,8 @@ public class VistaGeneral extends javax.swing.JFrame{
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(cerrarapp, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(cerrarapp, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -142,6 +148,8 @@ public class VistaGeneral extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    // End of variables declaration                   
+    // End of variables declaration     
+    
+  
 
 }    

@@ -74,6 +74,7 @@ public class VistaCliente extends javax.swing.JFrame implements Observer{
     // End of variables declaration                   
     private JPanel[][] tablero;
     
+    
     @Override
     public void update(Observable o, Object o1) {
         if(o1.equals(2)){
