@@ -22,7 +22,6 @@ public class VistaGeneral extends javax.swing.JFrame{
         cerrarapp = new javax.swing.JButton();
         botonLanzador = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jugadorvsia = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -71,18 +70,7 @@ public class VistaGeneral extends javax.swing.JFrame{
             }
         });
 
-        jLabel1.setText("Autores: ");
-
-        jugadorvsia.setBackground(new java.awt.Color(97, 176, 255));
-        jugadorvsia.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jugadorvsia.setForeground(new java.awt.Color(255, 255, 255));
-        jugadorvsia.setText("1 vs IA");
-        jugadorvsia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255)));
-        jugadorvsia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jugadorvsiaActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("Autores: Daniel Camacho, Jherel Cordova y Carlos Lopez");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 70)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -107,9 +95,7 @@ public class VistaGeneral extends javax.swing.JFrame{
             .addGroup(layout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addComponent(botonLanzador, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(jugadorvsia, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGap(53, 53, 53))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -122,8 +108,7 @@ public class VistaGeneral extends javax.swing.JFrame{
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonLanzador, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jugadorvsia, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botonLanzador, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -134,8 +119,8 @@ public class VistaGeneral extends javax.swing.JFrame{
     }// </editor-fold>                        
 
     private void botonLanzadorActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        
         try{
-            
             String IP = JOptionPane.showInputDialog("Ingrese IP: ");
             if (IP.equals(null)) System.exit(0);
             int puerto = Integer.parseInt(JOptionPane.showInputDialog("Ingrese Puerto: "));
@@ -148,13 +133,7 @@ public class VistaGeneral extends javax.swing.JFrame{
 
     private void cerrarappActionPerformed(java.awt.event.ActionEvent evt) {                                          
         System.exit(0);
-    }                                         
-
-    private void jugadorvsiaActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        ControladorCliente controlador = new ControladorCliente();
-        new VistaCliente(controlador).setVisible(true);
-        dispose();
-    }                                           
+    }                                                                                   
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton botonLanzador;
@@ -163,7 +142,6 @@ public class VistaGeneral extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton jugadorvsia;
     // End of variables declaration                   
 
 }    
