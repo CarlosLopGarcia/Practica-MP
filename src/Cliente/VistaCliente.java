@@ -2,6 +2,7 @@ package Cliente;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
@@ -34,15 +35,26 @@ public class VistaCliente extends javax.swing.JFrame implements Observer{
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jSalir = new javax.swing.JMenu();
+        jSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jSalir.setText("SALIR");
         jMenuBar1.add(jSalir);
-
         setJMenuBar(jMenuBar1);
 
+        jSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+
+            private void salirActionPerformed(ActionEvent evt) {
+                VistaGeneral vg = new VistaGeneral();
+                vg.setVisible(true);
+                dispose();
+            }
+        });
+       
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -58,7 +70,7 @@ public class VistaCliente extends javax.swing.JFrame implements Observer{
     }// </editor-fold>                        
     // Variables declaration - do not modify                     
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jSalir;
+    private javax.swing.JButton jSalir;
     // End of variables declaration                   
     private JPanel[][] tablero;
     
