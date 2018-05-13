@@ -17,11 +17,14 @@ A continuación, se muestras imágenes de las distintas pantallas de la aplicaci
   
 * Pantalla de servidor:  
 ![Server Screen](screenshots/serverscreen.png)  
+  
 * Pantalla principal del juego:  
 ![Main Screen](screenshots/snakescreen.png)  
+  
 * Pantallas de introducción de IP y puerto:  
 ![IP Screen](screenshots/ipscreen.png)  
 ![Port Screen](screenshots/portscreen.png)  
+  
 * Pantalla de juego con puntuación:  
 ![Game Screen](screenshots/gamescreen.png)  
   
