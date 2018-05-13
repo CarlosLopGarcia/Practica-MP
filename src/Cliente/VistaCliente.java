@@ -75,12 +75,12 @@ public class VistaCliente extends javax.swing.JFrame implements Observer {
     @Override
     public void update(Observable o, Object o1) {
         if(o1.equals(2)){
-            ConectorCliente con = (ConectorCliente) o;
+            ControladorCliente.ConectorCliente con = (ControladorCliente.ConectorCliente) o;
             tablero[con.getCay()][con.getCax()].setBackground(Color.green);
             if(con.getCoy()!=20) tablero[con.getCoy()][con.getCox()].setBackground(Color.white);
         }
         if(o1.equals(3)){
-            ConectorCliente con = (ConectorCliente) o;
+            ControladorCliente.ConectorCliente con = (ControladorCliente.ConectorCliente) o;
             tablero[con.getTy()][con.getTx()].setBackground(Color.red);
         }
     }

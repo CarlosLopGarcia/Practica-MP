@@ -5,7 +5,5 @@ public class PrincipalServidor {
         System.out.println("SERVIDOR INICIADO");
         ModeloServidor modeloM = new ModeloServidor();
         ControladorServidor controladorM = new ControladorServidor(modeloM);
-        
-        controladorM.start();
     }
 }

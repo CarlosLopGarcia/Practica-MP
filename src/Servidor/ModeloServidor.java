@@ -131,4 +131,32 @@ public class ModeloServidor extends Observable {
         this.setChanged();
         this.notifyObservers(new Integer(4));
     }
+    
+    //SUBCLASE COORDENADA
+    public class Coordenada{
+        //ATRIBUTOS
+        int y,x;
+
+        //CONSTRUCTOR
+        public Coordenada(int y, int x){
+            this.y = y;
+            this.x = x;
+        }
+
+        public int getY(){
+            return this.y;
+        }
+
+        public int getX(){
+            return this.x;
+        }
+
+        public void setY(int i){
+            this.y = i;
+        }
+
+        public void setX(int i){
+            this.x = i;
+        }
+    }
 }
